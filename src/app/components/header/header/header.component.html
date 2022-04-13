@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar [color]="color">
+
+    <!-- Menu Hamburguer -->
+    <ng-container *ngIf="menu && !url">
+      <ion-buttons slot="start">
+        <ion-menu-button menu="menu-content"></ion-menu-button>
+      </ion-buttons>
+    </ng-container>
+
+    <!-- Back button -->
+    <ng-container *ngIf="url && !menu">
+      <ion-buttons slot="start">
+        <ion-back-button text="" [defaultHref]="url"></ion-back-button>
+      </ion-buttons>
+    </ng-container>
+
+    <!-- Titulo da Página -->
+    <ion-title *ngIf="title" class="ion-text-center">{{title}}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
