@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
@@ -9,19 +11,23 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/auth/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/auth/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [LoginGuard]
   },
   {
     path: 'register',
-    loadChildren: () => import('./pages/auth/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/auth/register/register.module').then( m => m.RegisterPageModule),
+    canActivate: [LoginGuard]
   },
   {
     path: 'forgot',
-    loadChildren: () => import('./pages/auth/forgot/forgot.module').then( m => m.ForgotPageModule)
+    loadChildren: () => import('./pages/auth/forgot/forgot.module').then( m => m.ForgotPageModule),
+    canActivate: [LoginGuard]
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/menu/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/menu/home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthGuard]
   },
 ];
 

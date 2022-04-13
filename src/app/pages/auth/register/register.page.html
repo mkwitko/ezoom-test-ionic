@@ -1,5 +1,44 @@
-<app-header [menu]="false" title="Cadastro"></app-header>
+<app-header url="login" [menu]="false" title="Cadastro"></app-header>
 
 <ion-content>
+  <div>
+    <p class="ion-text-center ion-margin-top">
+      <img class="ion-padding logo" src="../../../../assets/img/logo.png" alt="">
+    </p>
+    <h2 class="ion-text-center">Cadastro</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
 
+          <ion-item>
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" [(ngModel)]="userRegistration.userEmail"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Usuário</ion-label>
+            <ion-input type="email" [(ngModel)]="userRegistration.userName"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="userRegistration.userPassword"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Confirme sua senha</ion-label>
+            <ion-input type="password" [(ngModel)]="confirmPassword"></ion-input>
+          </ion-item>
+
+          <ion-button (click)="register()" class="ion-margin-top" expand="block" color="primary">
+            Enviar
+          </ion-button>
+
+          <ion-button (click)="goTo('login')" expand="block" color="light" class="ion-margin-top">
+            Voltar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

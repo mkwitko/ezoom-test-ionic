@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private auth: AuthService
+  ) { }
 
   ngOnInit() {
   }
 
+  logout()
+  {
+    this.auth.logout();
+  }
+
+  getUser()
+  {
+    console.log(this.auth.getAuth());
+  }
 }
