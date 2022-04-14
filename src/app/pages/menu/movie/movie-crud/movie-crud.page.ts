@@ -18,6 +18,7 @@ export class MovieCrudPage{
 
   sendObject: Movie = {};
   routeId;
+  controller = environment.controllers[1];
 
   constructor(
     private crud: CrudService,
@@ -70,7 +71,7 @@ export class MovieCrudPage{
 
   load(routeId: string)
   {
-    this.crud.read(environment.controllers[1], routeId).then((res => {
+    this.crud.read(this.controller, routeId).then((res => {
       this.screen.presentToast('Filme carregado com sucesso!', 'sucess');
       this.sendObject = res;
     })).catch(() => {
@@ -81,7 +82,7 @@ export class MovieCrudPage{
 
   create()
   {
-    this.crud.create(environment.controllers[1], this.sendObject).then(() => {
+    this.crud.create(this.controller, this.sendObject).then(() => {
       this.screen.presentToast('Filme adicionado com sucesso!', 'sucess');
     }).catch(() => {
       this.screen.presentToast('Ocorreu um erro. Tente novamente mais tarde ou contate a administração do App.');
@@ -92,7 +93,7 @@ export class MovieCrudPage{
 
   update()
   {
-    this.crud.update(environment.controllers[1], this.routeId, this.sendObject).then(() => {
+    this.crud.update(this.controller, this.routeId, this.sendObject).then(() => {
       this.screen.presentToast('Filme Atualizado com sucesso!', 'sucess');
     }).catch(() => {
       this.screen.presentToast('Ocorreu um erro. Tente novamente mais tarde ou contate a administração do App.');
@@ -118,7 +119,7 @@ export class MovieCrudPage{
           text: 'Okay',
           id: 'confirm-button',
           handler: () => {
-            this.crud.delete(environment.controllers[1], this.routeId);
+            this.crud.delete(this.controller, this.routeId);
             this.navigationService.goHome();
           }
         }

@@ -2,4 +2,18 @@
 
 <ion-content>
 
+  <ng-container *ngIf="games.length === 0">
+    <app-skeleton-card></app-skeleton-card>
+  </ng-container>
+
+  <ng-container *ngIf="games.length > 0">
+    <ng-container *ngFor="let item of games">
+      <app-content-card [content]="item" url="game" [crud]="true"></app-content-card>
+    </ng-container>
+  </ng-container>
+
 </ion-content>
+
+<ion-footer>
+  <app-fab-bottom-right url="game-crud"></app-fab-bottom-right>
+</ion-footer>

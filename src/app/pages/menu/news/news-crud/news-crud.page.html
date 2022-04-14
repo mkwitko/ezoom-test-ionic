@@ -1,5 +1,37 @@
 <app-header [menu]="false" title="Adicionar Notícias" url="news-crud-home"></app-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label position="floating">Titulo</ion-label>
+    <ion-input type="text" [(ngModel)]="sendObject.title" ></ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label position="floating">SubTitulo</ion-label>
+    <ion-input type="text" [(ngModel)]="sendObject.subtitle" ></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label position="floating">Conteúdo</ion-label>
+    <ion-textarea type="text" [(ngModel)]="sendObject.description" ></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Link da Imagem</ion-label>
+    <ion-input type="text" [(ngModel)]="sendObject.image" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Link da Notícia</ion-label>
+    <ion-input type="text" [(ngModel)]="sendObject.link" ></ion-input>
+  </ion-item>
+
+  <ion-button class="ion-margin" (click)="submit()" expand="block">
+    Enviar
+  </ion-button>
+
+  <ion-button *ngIf="routeId" class="ion-margin" color="danger" (click)="delete()" expand="block">
+    Deletar
+  </ion-button>
 </ion-content>

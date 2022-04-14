@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Game } from 'src/app/interfaces/game/game';
+import { CrudService } from 'src/app/services/crud/crud.service';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
+import { ScreenService } from 'src/app/services/screen-effects/screen.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-game-crud-home',
   templateUrl: './game-crud-home.page.html',
   styleUrls: ['./game-crud-home.page.scss'],
 })
-export class GameCrudHomePage implements OnInit {
+export class GameCrudHomePage{
 
-  constructor() { }
+  public games = new Array<Game>();
 
-  ngOnInit() {
+  constructor(
+    private crud: CrudService,
+    private screen: ScreenService,
+    private navigationService: NavigationService
+  )
+  {}
+
+  ionViewWillEnter()
+  {
+    this.crud.readAll(environment.controllers[3]).then(res => {
+      this.games = res;
+    }).catch(() => {
+      this.screen.presentToast('Não foi possível carregar os dados. Tente novamente mais tarde.');
+      this.navigationService.goHome();
+    });
   }
-
 }
