@@ -1,11 +1,5 @@
 <app-header title="Página Inicial"></app-header>
 
 <ion-content>
-  <ion-button (click)="logout()" expand="block" fill="clear" shape="round">
-    Click me
-  </ion-button>
-
-  <ion-button (click)="getUser()" expand="block" fill="clear" shape="round">
-    Get User
-  </ion-button>
+  <app-home-slider-content *ngFor="let item of [0,1,2]" title="Filmes" [content]="movieFakeContent.movieFakeContent"></app-home-slider-content>
 </ion-content>

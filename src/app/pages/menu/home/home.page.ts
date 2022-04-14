@@ -1,27 +1,14 @@
-import { AuthService } from './../../../services/auth/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MovieFakeContentService } from 'src/app/fakeContent/movie/movie-fake-content.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage{
 
   constructor(
-    private auth: AuthService
+    public movieFakeContent: MovieFakeContentService
   ) { }
-
-  ngOnInit() {
-  }
-
-  logout()
-  {
-    this.auth.logout();
-  }
-
-  getUser()
-  {
-    console.log(this.auth.getAuth());
-  }
 }

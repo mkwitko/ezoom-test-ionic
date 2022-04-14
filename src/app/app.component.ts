@@ -10,6 +10,34 @@ import { NavigationService } from './services/navigation/navigation.service';
 })
 export class AppComponent {
 
+  public userItens = [
+    {
+      name: 'Home',
+      path: 'home',
+      icon: 'home-sharp'
+    },
+    {
+      name: 'Filmes',
+      path: 'movie-home',
+      icon: 'videocam-sharp'
+    },
+    {
+      name: 'Notícias',
+      path: 'news-home',
+      icon: 'newspaper-sharp'
+    },
+    {
+      name: 'Jogos',
+      path: 'game-home',
+      icon: 'game-controller-sharp'
+    },
+    {
+      name: 'Músicas',
+      path: 'music-home',
+      icon: 'musical-notes-sharp'
+    }
+  ];
+
   constructor(
     public menuCtrl: MenuService,
     private auth: AuthService,
@@ -23,5 +51,14 @@ export class AppComponent {
         this.auth.id = user.uid;
       }
     });
+  }
+
+  changePage(url: string){
+    this.navigationService.changePage(url);
+    this.menuCtrl.close();
+  }
+
+  logout(){
+    this.auth.logout();
   }
 }

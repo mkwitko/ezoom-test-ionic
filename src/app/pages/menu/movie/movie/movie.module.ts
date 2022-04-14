@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
-import { HomePageRoutingModule } from './home-routing.module';
-import { HomePage } from './home.page';
+
+import { MoviePageRoutingModule } from './movie-routing.module';
+
+import { MoviePage } from './movie.page';
 import { HeaderCustomModule } from 'src/app/components/header/header/header.module';
-import { HomeSliderContentModule } from './../../../components/home-slider-content/home-slider-content.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-    HeaderCustomModule,
-    HomeSliderContentModule
+    MoviePageRoutingModule,
+    HeaderCustomModule
   ],
-  declarations: [HomePage]
+  declarations: [MoviePage]
 })
-export class HomePageModule {}
+export class MoviePageModule {}
