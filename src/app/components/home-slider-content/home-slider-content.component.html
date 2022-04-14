@@ -1,8 +1,8 @@
 <div class="section">
-  <app-home-slider-header [title]='title'></app-home-slider-header>
+  <app-home-slider-header [title]='title' [url]='url'></app-home-slider-header>
   <ion-slides mode="ios" pager="ios" [options]="slides">
     <ion-slide *ngFor="let item of content">
-      <ion-card>
+      <ion-card (click)="goTo(item.id)">
         <img [src]="item.image" alt="">
       </ion-card>
     </ion-slide>

@@ -1,3 +1,4 @@
+import { NavigationService } from './../../services/navigation/navigation.service';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -8,16 +9,25 @@ import { Component, Input } from '@angular/core';
 export class HomeSliderContentComponent {
 
   @Input() title;
+  @Input() url;
   @Input() content;
 
   slides = {
     slidesPerView: 1.5,
     centeredSlides: true,
     loop: true,
-    spaceBetween: 10,
-    autoplay: true
+    spaceBetween: 10
+    //autoplay: true
   };
 
-  constructor() { }
+  constructor(
+    private navigationService: NavigationService
+  ) { }
+
+  goTo(id: string)
+  {
+    const url = this.url + '-details/' + id;
+    this.navigationService.changePage(url);
+  }
 
 }

@@ -49,6 +49,26 @@ const routes: Routes = [
     loadChildren: () => import('./pages/menu/music/music/music.module').then( m => m.MusicPageModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'movie-details/:id',
+    loadChildren: () => import('./pages/menu/movie/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'news-details/:id',
+    loadChildren: () => import('./pages/menu/news/news-details/news-details.module').then( m => m.NewsDetailsPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'game-details/:id',
+    loadChildren: () => import('./pages/menu/game/game-details/game-details.module').then( m => m.GameDetailsPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'music-details/:id',
+    loadChildren: () => import('./pages/menu/music/music-details/music-details.module').then( m => m.MusicDetailsPageModule),
+    canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+import { NavigationService } from './../../services/navigation/navigation.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -5,12 +6,18 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './home-slider-header.component.html',
   styleUrls: ['./home-slider-header.component.scss'],
 })
-export class HomeSliderHeaderComponent implements OnInit {
+export class HomeSliderHeaderComponent {
 
   @Input() title;
+  @Input() url;
 
-  constructor() { }
+  constructor(
+    private navigationService: NavigationService
+  ) { }
 
-  ngOnInit() {}
+  goTo()
+  {
+    this.navigationService.changePage(this.url + '-home');
+  }
 
 }

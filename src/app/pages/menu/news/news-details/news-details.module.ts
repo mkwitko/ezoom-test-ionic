@@ -4,21 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MoviePageRoutingModule } from './movie-routing.module';
+import { NewsDetailsPageRoutingModule } from './news-details-routing.module';
 
-import { MoviePage } from './movie.page';
+import { NewsDetailsPage } from './news-details.page';
 import { HeaderCustomModule } from 'src/app/components/header/header/header.module';
-import { ContentCardModule } from 'src/app/components/cards/content-card/content-card.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MoviePageRoutingModule,
-    HeaderCustomModule,
-    ContentCardModule
+    NewsDetailsPageRoutingModule,
+    HeaderCustomModule
   ],
-  declarations: [MoviePage]
+  declarations: [NewsDetailsPage]
 })
-export class MoviePageModule {}
+export class NewsDetailsPageModule {}

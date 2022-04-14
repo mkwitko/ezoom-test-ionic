@@ -1,5 +1,27 @@
 <app-header title="Página Inicial"></app-header>
 
 <ion-content>
-  <app-home-slider-content *ngFor="let item of [0,1,2]" title="Filmes" [content]="movieFakeContent.movieFakeContent"></app-home-slider-content>
+  <app-home-slider-content
+  title="Filmes"
+  [content]="movieFakeContent.movieFakeContent"
+  url="movie"
+  ></app-home-slider-content>
+
+  <app-home-slider-content
+  title="Notícias"
+  [content]="movieFakeContent.movieFakeContent"
+  url="news"
+  ></app-home-slider-content>
+
+  <app-home-slider-content
+  title="Jogos"
+  [content]="movieFakeContent.movieFakeContent"
+  url="game"
+  ></app-home-slider-content>
+
+  <app-home-slider-content
+  title="Músicas"
+  [content]="movieFakeContent.movieFakeContent"
+  url="music"
+  ></app-home-slider-content>
 </ion-content>
