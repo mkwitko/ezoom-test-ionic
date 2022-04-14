@@ -9,6 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+//SafePipe
+import { SafePipeModule } from 'safe-pipe';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,7 +21,10 @@ import { ToastrModule } from 'ngx-toastr';
 
     //Angular Custom Toasts
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+
+    //SafePipe
+    SafePipeModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

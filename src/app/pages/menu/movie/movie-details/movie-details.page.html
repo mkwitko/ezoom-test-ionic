@@ -2,4 +2,23 @@
 
 <ion-content>
 
+  <ion-card *ngIf="loaded">
+    <iframe
+    class="ion-margin-top"
+    [src]="trustedLink"
+    [title]="loaded.title"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+    <ion-card-header>
+      <ion-card-subtitle>{{loaded.subtitle}}</ion-card-subtitle>
+      <ion-card-title>{{loaded.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{loaded.description}}
+    </ion-card-content>
+  </ion-card>
+
+
+
 </ion-content>
