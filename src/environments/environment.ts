@@ -15,7 +15,7 @@ export const environment = {
   },
   baseUrl: 'http://localhost:8080/',
   controllers: [
-    'users'
+    'users', 'movies', 'newss', 'games', 'musics'
   ]
 };
 

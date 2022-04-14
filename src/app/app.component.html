@@ -1,7 +1,7 @@
 <ion-app>
   <ion-split-pane [disabled]="menuCtrl.menuBool" contentId="menu-content">
     <ion-menu class="side-menu-gradient" contentId="menu-content" menuId="menu-content" side="start" type="overlay">
-      <ion-content>
+      <ion-content *ngIf="auth.user">
 
         <!-- Photo -->
         <p class="ion-text-center photo">
@@ -9,13 +9,23 @@
         </p>
 
         <!-- Nickname -->
-        <p *ngIf="auth.user" class="ion-text-center nome">
+        <p class="ion-text-center nome">
             Bem Vindo, {{auth.user.userName}}!
         </p>
 
         <!-- User menu's -->
-        <ng-container>
+        <ng-container *ngIf="auth.user.role === 'user'">
           <ng-container *ngFor="let a of userItens">
+            <ion-item class="ion-margin-top itens" button (click)="changePage(a.path)" routerLinkActive="active">
+              <ion-icon color="light" slot="start" class="ion-margin-start" name={{a.icon}}></ion-icon>
+              <ion-label color="light">{{a.name}}</ion-label>
+            </ion-item>
+          </ng-container>
+        </ng-container>
+
+        <!-- Admin menu's -->
+        <ng-container *ngIf="auth.user.role === 'admin'">
+          <ng-container *ngFor="let a of adminItens">
             <ion-item class="ion-margin-top itens" button (click)="changePage(a.path)" routerLinkActive="active">
               <ion-icon color="light" slot="start" class="ion-margin-start" name={{a.icon}}></ion-icon>
               <ion-label color="light">{{a.name}}</ion-label>

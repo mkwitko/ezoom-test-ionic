@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoadingController, ModalController, ToastController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
@@ -11,8 +11,6 @@ export class ScreenService {
 
   constructor(
     private loadingController: LoadingController,
-    private toastController: ToastController,
-    private modalController: ModalController,
     private toastr: ToastrService
   ) { }
 
@@ -45,11 +43,5 @@ export class ScreenService {
 
   }
 
-  async presentModal(component: any, myClass: string) {
-    const modal = await this.modalController.create({
-      component,
-      cssClass: myClass
-    });
-    return await modal.present();
-  }
+
 }

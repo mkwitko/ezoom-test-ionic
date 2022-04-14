@@ -10,6 +10,7 @@ export class ContentCardComponent{
 
   @Input() url;
   @Input() content;
+  @Input() crud = false;
 
   constructor(
     private navigationService: NavigationService
@@ -17,7 +18,13 @@ export class ContentCardComponent{
 
   goTo(id: string)
   {
-    const url = this.url + '-details/' + id;
+    let route = '-details/';
+
+    if(this.crud === true)
+    {
+      route = '-crud/';
+    }
+    const url = this.url + route + id;
     this.navigationService.changePage(url);
   }
 

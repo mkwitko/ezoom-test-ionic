@@ -19,4 +19,9 @@ export class NavigationService {
   goBack(){
     this.nav.back();
   }
+
+  goHome()
+  {
+    this.router.navigateByUrl('home');
+  }
 }

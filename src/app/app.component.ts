@@ -40,6 +40,34 @@ export class AppComponent {
     }
   ];
 
+  public adminItens = [
+    {
+      name: 'Home',
+      path: 'home',
+      icon: 'home-sharp'
+    },
+    {
+      name: 'Filmes',
+      path: 'movie-crud-home',
+      icon: 'videocam-sharp'
+    },
+    {
+      name: 'Notícias',
+      path: 'news-crud-home',
+      icon: 'newspaper-sharp'
+    },
+    {
+      name: 'Jogos',
+      path: 'game-crud-home',
+      icon: 'game-controller-sharp'
+    },
+    {
+      name: 'Músicas',
+      path: 'music-crud-home',
+      icon: 'musical-notes-sharp'
+    }
+  ];
+
   constructor(
     public menuCtrl: MenuService,
     public auth: AuthService,

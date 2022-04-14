@@ -27,7 +27,7 @@ export class CrudService {
   read(controller: string, id: string)
   {
     return new Promise((resolve, reject) => {
-      this.http.get(environment.baseUrl + controller + '/show/' + id)
+      this.http.post(environment.baseUrl + controller + '/show/' + id, '')
       .subscribe({
         next: (res) => {
           resolve(res);
@@ -53,7 +53,7 @@ export class CrudService {
   update(controller: string, id: string, body: any)
   {
     return new Promise((resolve, reject) => {
-      this.http.put(environment.baseUrl + controller + '/update/' + id, body)
+      this.http.post(environment.baseUrl + controller + '/update/' + id, body)
       .subscribe({
         next: (res) => {
           resolve(res);
@@ -66,7 +66,7 @@ export class CrudService {
   delete(controller: string, id: string)
   {
     return new Promise((resolve, reject) => {
-      this.http.delete(environment.baseUrl + controller + '/delete/' + id)
+      this.http.post(environment.baseUrl + controller + '/delete/' + id, '')
       .subscribe({
         next: (res) => {
           resolve(res);

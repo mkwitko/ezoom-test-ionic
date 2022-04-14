@@ -16,7 +16,7 @@ export class AddingContentCardsComponent{
 
   goTo(url: string)
   {
-    this.navigationService.changePage(url);
+    this.navigationService.changePage(url + '-crud');
   }
 
 }

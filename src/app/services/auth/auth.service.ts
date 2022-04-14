@@ -27,7 +27,7 @@ import { CrudService } from '../crud/crud.service';
 export class AuthService {
 
   public user: UserInterface;
-  public id: string;
+  public id: number;
   private readonly auth: Auth;
 
   constructor(
