@@ -1,5 +1,6 @@
 export interface Movie {
   id?: number;
+  creatorId?: number;
   createdAt?: Date;
   title?: string;
   subtitle?: string;

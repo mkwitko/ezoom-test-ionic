@@ -3,6 +3,16 @@
     <ion-menu class="side-menu-gradient" contentId="menu-content" menuId="menu-content" side="start" type="overlay">
       <ion-content>
 
+        <!-- Photo -->
+        <p class="ion-text-center photo">
+          <img src="../assets/img/default-user.png" alt="">
+        </p>
+
+        <!-- Nickname -->
+        <p *ngIf="auth.user" class="ion-text-center nome">
+            Bem Vindo, {{auth.user.userName}}!
+        </p>
+
         <!-- User menu's -->
         <ng-container>
           <ng-container *ngFor="let a of userItens">

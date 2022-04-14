@@ -19,12 +19,14 @@ import { ScreenService } from './../screen-effects/screen.service';
 import { MenuControlService } from './../screen-effects/menu-control.service';
 import { AllowToPassService } from './../allow-to-pass/allow-to-pass.service';
 import { from } from 'rxjs';
+import { CrudService } from '../crud/crud.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  public user: UserInterface;
   public id: string;
   private readonly auth: Auth;
 
@@ -33,7 +35,8 @@ export class AuthService {
     private menuCtrl: MenuControlService,
     private screenService: ScreenService,
     private navigationService: NavigationService,
-    private firebaseError: FirebaseErrorTranslationService
+    private firebaseError: FirebaseErrorTranslationService,
+    private crud: CrudService
   )
   {
     const firebaseApp = initializeApp(environment.firebase);
@@ -125,7 +128,13 @@ export class AuthService {
         return from(createUserWithEmailAndPassword(
           this.auth, user.userEmail.trim(), user.userPassword.trim())
           .then(() => {
-            this.screenService.presentToast('Conta criada com sucesso!', 'sucess');
+            user.userPassword = null;
+            this.crud.create(environment.controllers[0], user).then(() => {
+              this.screenService.presentToast('Conta criada com sucesso!', 'sucess');
+            }).catch(() => {
+              this.screenService.presentToast('Ocorreu um erro na criação da conta');
+              this.delete();
+            });
           }).catch((error) => {
             this.screenService.presentToast(
               this.firebaseError.verifyErrors(error.code)

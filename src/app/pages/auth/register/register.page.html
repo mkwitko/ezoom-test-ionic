@@ -30,6 +30,11 @@
             <ion-input type="password" [(ngModel)]="confirmPassword"></ion-input>
           </ion-item>
 
+          <ion-item>
+            <ion-label>Administrador</ion-label>
+            <ion-checkbox [checked]="admin" [(ngModel)]="admin"></ion-checkbox>
+          </ion-item>
+
           <ion-button (click)="register()" class="ion-margin-top" expand="block" color="primary">
             Enviar
           </ion-button>

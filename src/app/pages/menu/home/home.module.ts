@@ -1,3 +1,4 @@
+import { AddingContentCardModule } from './../../../components/cards/adding-content-cards/adding-content.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +15,8 @@ import { HomeSliderContentModule } from './../../../components/home-slider-conte
     IonicModule,
     HomePageRoutingModule,
     HeaderCustomModule,
-    HomeSliderContentModule
+    HomeSliderContentModule,
+    AddingContentCardModule
   ],
   declarations: [HomePage]
 })

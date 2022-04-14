@@ -12,3 +12,23 @@ ion-menu {
 ion-icon {
   color: white;
 }
+
+img {
+  width: 11vh;
+  height: 11vh;
+  border-radius: 20%;
+  border: 7px var(--ion-color-tertiary);
+  object-fit: contain;
+}
+
+.photo {
+  margin-top: 5vh;
+}
+
+.nome {
+  font-size: 2vh;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--ion-color-light);
+  margin-bottom: 5vh;
+}

@@ -12,6 +12,7 @@ export class RegisterPage {
 
   public userRegistration: UserInterface = {};
   public confirmPassword = '';
+  public admin = false;
 
 
   constructor(
@@ -21,6 +22,7 @@ export class RegisterPage {
 
   register()
   {
+    this.roleAssign();
     this.authService.register(this.userRegistration, this.confirmPassword);
   }
 
@@ -29,4 +31,15 @@ export class RegisterPage {
     this.navigationService.changePage(url);
   }
 
+  roleAssign()
+  {
+    if(this.admin === false)
+    {
+      this.userRegistration.role = 'user';
+    }
+    else
+    {
+      this.userRegistration.role = 'admin';
+    }
+  }
 }

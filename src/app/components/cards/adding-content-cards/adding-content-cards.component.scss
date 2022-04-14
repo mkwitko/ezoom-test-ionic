@@ -1,0 +1,37 @@
+ion-card {
+  //--background: none;
+  //background-image: url('../../../../assets/addingCards/movieCard.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0px 0px 277px 3px var(--ion-color-dark);
+  min-height: 25vh;
+  max-height: 25vh;
+
+  div {
+    height: 25vh;
+    width: 100vh;
+    display:table-cell;
+    vertical-align:middle;
+  }
+}
+
+p {
+  margin: 0 0 2vh 0;
+  padding: 0;
+}
+
+.white {
+  color: white;
+}
+
+.title
+{
+  font-size: 5vh;
+  font-weight: 700;
+}
+
+.subtitle
+{
+  font-size: 2vh;
+}

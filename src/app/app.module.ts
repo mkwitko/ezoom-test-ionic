@@ -5,6 +5,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+//HTTP
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 //Angular custom Toasts
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -18,6 +21,9 @@ import { SafePipeModule } from 'safe-pipe';
   entryComponents: [],
   imports: [
     BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+
+    //HTTP
+    HttpClientModule,
 
     //Angular Custom Toasts
     BrowserAnimationsModule,

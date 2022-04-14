@@ -1,0 +1,9 @@
+<ng-container *ngIf="content">
+  <ion-card [style.background-image]="'url(' + content.image + ')'" (click)="goTo(content.path)">
+    <div>
+      <p class="ion-text-center white title">{{content.title}}</p>
+      <p class="ion-text-center white subtitle">Aqui você pode adicionar {{content.title}}</p>
+    </div>
+  </ion-card>
+
+</ng-container>

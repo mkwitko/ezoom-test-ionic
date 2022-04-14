@@ -1,5 +1,7 @@
+import { environment } from 'src/environments/environment';
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth/auth.service';
+import { CrudService } from './services/crud/crud.service';
 import { MenuService } from './services/menu/menu.service';
 import { NavigationService } from './services/navigation/navigation.service';
 
@@ -40,15 +42,31 @@ export class AppComponent {
 
   constructor(
     public menuCtrl: MenuService,
-    private auth: AuthService,
-    private navigationService: NavigationService
+    public auth: AuthService,
+    private navigationService: NavigationService,
+    private crud: CrudService
   )
   {
     this.auth.getAuth().onAuthStateChanged(user => {
       this.menuCtrl.menuBool = !user;
       if(user)
       {
-        this.auth.id = user.uid;
+        this.crud.readAll(environment.controllers[0]).then((res ) =>
+        {
+          for(const a of res)
+          {
+            if(user.email === a.userEmail)
+            {
+              this.auth.user = a;
+              this.auth.id = a.id;
+              console.log(this.auth.user);
+            }
+          }
+        });
+      }
+      else {
+        this.auth.user = null;
+        this.auth.id = null;
       }
     });
   }

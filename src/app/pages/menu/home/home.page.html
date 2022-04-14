@@ -1,27 +1,42 @@
 <app-header title="Página Inicial"></app-header>
 
 <ion-content>
-  <app-home-slider-content
-  title="Filmes"
-  [content]="movieFakeContent.movieFakeContent"
-  url="movie"
-  ></app-home-slider-content>
+  <ng-container *ngIf="auth.user">
 
-  <app-home-slider-content
-  title="Notícias"
-  [content]="movieFakeContent.movieFakeContent"
-  url="news"
-  ></app-home-slider-content>
+    <ng-container *ngIf="auth.user.role === 'admin'">
+      <ng-container *ngFor="let item of content">
+        <app-adding-content-cards [content]="item"></app-adding-content-cards>
+      </ng-container>
 
-  <app-home-slider-content
-  title="Jogos"
-  [content]="movieFakeContent.movieFakeContent"
-  url="game"
-  ></app-home-slider-content>
+    </ng-container>
 
-  <app-home-slider-content
-  title="Músicas"
-  [content]="movieFakeContent.movieFakeContent"
-  url="music"
-  ></app-home-slider-content>
+    <ng-container *ngIf="auth.user.role === 'user'">
+    <app-home-slider-content
+    title="Filmes"
+    [content]="movieFakeContent.movieFakeContent"
+    url="movie"
+    ></app-home-slider-content>
+
+    <app-home-slider-content
+    title="Notícias"
+    [content]="movieFakeContent.movieFakeContent"
+    url="news"
+    ></app-home-slider-content>
+
+    <app-home-slider-content
+    title="Jogos"
+    [content]="movieFakeContent.movieFakeContent"
+    url="game"
+    ></app-home-slider-content>
+
+    <app-home-slider-content
+    title="Músicas"
+    [content]="movieFakeContent.movieFakeContent"
+    url="music"
+    ></app-home-slider-content>
+    </ng-container>
+
+
+  </ng-container>
+
 </ion-content>
