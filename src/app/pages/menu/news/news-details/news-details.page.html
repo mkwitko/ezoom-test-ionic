@@ -16,12 +16,12 @@
       <!-- Descrição -->
       {{loaded.description}}
     </ion-card-content>
-
-    <ion-button (click)="goTo()" expand="block">
-      Ler mais
-    </ion-button>
   </ion-card>
-
-
-
 </ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-button (click)="goTo()" fill="clear" expand="block">
+      <ion-label color="light">Ler mais!</ion-label>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
