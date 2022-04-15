@@ -41,6 +41,7 @@ Caso o usuário acesse esta página de 'detalhes' sem ter passado pela página a
 ## Aplicação - Administrador
 
 Ao entrar como administrador, será apresentado as mesmas três categorias em formatos de cards.
+
 Ao clicar em qualquer card, o administrador é redirecionado para uma nova página de Crud, onde poderá adicionar um elemento referente à categoria selecionada.
 
 Para poder enviar um elemento se faz necessário preencher todos os campos do formulário.
@@ -48,7 +49,9 @@ Para poder enviar um elemento se faz necessário preencher todos os campos do fo
 Verificações especiais
 
 - Filme -> Se faz necessário preencher o campo 'Link' com um link Embed do Youtube, [por exemplo](https://support.google.com/youtube/answer/171780?hl=pt-BR).
+- 
 *Atenção: Importante salientar: O campo solicita que seja adicionado somente o link embed, não todo o código html que o youtube fornece.
+
   *Exemplo: 
   Link original - https://www.youtube.com/watch?v=188E-bt4Wy4
   Link a ser adicionado - https://www.youtube.com/embed/188E-bt4Wy4
