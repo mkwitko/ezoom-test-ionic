@@ -6,7 +6,6 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { HeaderCustomModule } from 'src/app/components/header/header/header.module';
-import { HomeSliderContentModule } from './../../../components/home-slider-content/home-slider-content.module';
 
 @NgModule({
   imports: [
@@ -15,7 +14,6 @@ import { HomeSliderContentModule } from './../../../components/home-slider-conte
     IonicModule,
     HomePageRoutingModule,
     HeaderCustomModule,
-    HomeSliderContentModule,
     AddingContentCardModule
   ],
   declarations: [HomePage]

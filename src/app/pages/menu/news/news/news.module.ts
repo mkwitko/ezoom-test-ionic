@@ -1,3 +1,4 @@
+import { ContentCardModule } from 'src/app/components/cards/content-card/content-card.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +16,8 @@ import { HeaderCustomModule } from 'src/app/components/header/header/header.modu
     FormsModule,
     IonicModule,
     NewsPageRoutingModule,
-    HeaderCustomModule
+    HeaderCustomModule,
+    ContentCardModule
   ],
   declarations: [NewsPage]
 })

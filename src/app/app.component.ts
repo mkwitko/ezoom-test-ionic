@@ -4,6 +4,7 @@ import { AuthService } from './services/auth/auth.service';
 import { CrudService } from './services/crud/crud.service';
 import { MenuService } from './services/menu/menu.service';
 import { NavigationService } from './services/navigation/navigation.service';
+import { ScreenService } from './services/screen-effects/screen.service';
 
 @Component({
   selector: 'app-root',
@@ -32,11 +33,6 @@ export class AppComponent {
       name: 'Jogos',
       path: 'game-home',
       icon: 'game-controller-sharp'
-    },
-    {
-      name: 'Músicas',
-      path: 'music-home',
-      icon: 'musical-notes-sharp'
     }
   ];
 
@@ -60,11 +56,6 @@ export class AppComponent {
       name: 'Jogos',
       path: 'game-crud-home',
       icon: 'game-controller-sharp'
-    },
-    {
-      name: 'Músicas',
-      path: 'music-crud-home',
-      icon: 'musical-notes-sharp'
     }
   ];
 
@@ -72,8 +63,14 @@ export class AppComponent {
     public menuCtrl: MenuService,
     public auth: AuthService,
     private navigationService: NavigationService,
-    private crud: CrudService
+    private crud: CrudService,
+    private screen: ScreenService
   )
+  {
+    this.loadAll();
+  }
+
+  loadAll()
   {
     this.auth.getAuth().onAuthStateChanged(user => {
       this.menuCtrl.menuBool = !user;
@@ -81,6 +78,7 @@ export class AppComponent {
       {
         this.crud.readAll(environment.controllers[0]).then((res ) =>
         {
+          console.log('res', res);
           for(const a of res)
           {
             if(user.email === a.userEmail)
@@ -90,6 +88,27 @@ export class AppComponent {
               console.log(this.auth.user);
             }
           }
+        });
+
+        //Movies
+        this.crud.readAll(environment.controllers[1]).then((res => {
+          this.crud.moviesData = res;
+        })).catch(() => {
+          this.screen.presentToast('Não foi possível recuperar os dados dos Filmes');
+        });
+
+        //News
+        this.crud.readAll(environment.controllers[2]).then((res => {
+          this.crud.newsData = res;
+        })).catch(() => {
+          this.screen.presentToast('Não foi possível recuperar os dados das Notícias');
+        });
+
+        //Games
+        this.crud.readAll(environment.controllers[3]).then((res => {
+          this.crud.gamesData = res;
+        })).catch(() => {
+          this.screen.presentToast('Não foi possível recuperar os dados dos Jogos');
         });
       }
       else {

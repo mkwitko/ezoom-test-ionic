@@ -15,12 +15,15 @@ import { ToastrModule } from 'ngx-toastr';
 //SafePipe
 import { SafePipeModule } from 'safe-pipe';
 
+//Inapp
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+    BrowserModule, IonicModule.forRoot({swipeBackEnabled: false}), AppRoutingModule,
 
     //HTTP
     HttpClientModule,
@@ -32,7 +35,10 @@ import { SafePipeModule } from 'safe-pipe';
     //SafePipe
     SafePipeModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+
+    //InApp
+    InAppBrowser],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

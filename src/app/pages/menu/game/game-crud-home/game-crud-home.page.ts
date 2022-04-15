@@ -15,7 +15,7 @@ export class GameCrudHomePage{
   public games = new Array<Game>();
 
   constructor(
-    private crud: CrudService,
+    public crud: CrudService,
     private screen: ScreenService,
     private navigationService: NavigationService
   )

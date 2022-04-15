@@ -1,5 +1,5 @@
+import { CrudService } from 'src/app/services/crud/crud.service';
 import { Component } from '@angular/core';
-import { MovieFakeContentService } from 'src/app/fakeContent/movie/movie-fake-content.service';
 
 @Component({
   selector: 'app-movie',
@@ -9,7 +9,7 @@ import { MovieFakeContentService } from 'src/app/fakeContent/movie/movie-fake-co
 export class MoviePage{
 
   constructor(
-    public movieFakeContent: MovieFakeContentService
+    public crud: CrudService
   ) { }
 
 }

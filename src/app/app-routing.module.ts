@@ -45,11 +45,6 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'music-home',
-    loadChildren: () => import('./pages/menu/music/music/music.module').then( m => m.MusicPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'movie-details/:id',
     loadChildren: () => import('./pages/menu/movie/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule),
     canActivate: [AuthGuard]
@@ -62,11 +57,6 @@ const routes: Routes = [
   {
     path: 'game-details/:id',
     loadChildren: () => import('./pages/menu/game/game-details/game-details.module').then( m => m.GameDetailsPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'music-details/:id',
-    loadChildren: () => import('./pages/menu/music/music-details/music-details.module').then( m => m.MusicDetailsPageModule),
     canActivate: [AuthGuard]
   },
   {
@@ -85,11 +75,6 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'music-crud',
-    loadChildren: () => import('./pages/menu/music/music-crud/music-crud.module').then( m => m.MusicCrudPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'movie-crud/:id',
     loadChildren: () => import('./pages/menu/movie/movie-crud/movie-crud.module').then( m => m.MovieCrudPageModule),
     canActivate: [AuthGuard]
@@ -105,11 +90,6 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'music-crud/:id',
-    loadChildren: () => import('./pages/menu/music/music-crud/music-crud.module').then( m => m.MusicCrudPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'movie-crud-home',
     loadChildren: () => import('./pages/menu/movie/movie-crud-home/movie-crud-home.module').then( m => m.MovieCrudHomePageModule),
     canActivate: [AuthGuard]
@@ -122,11 +102,6 @@ const routes: Routes = [
   {
     path: 'news-crud-home',
     loadChildren: () => import('./pages/menu/news/news-crud-home/news-crud-home.module').then( m => m.NewsCrudHomePageModule),
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'music-crud-home',
-    loadChildren: () => import('./pages/menu/music/music-crud-home/music-crud-home.module').then( m => m.MusicCrudHomePageModule),
     canActivate: [AuthGuard]
   }
 ];

@@ -1,3 +1,4 @@
+import { ContentCardModule } from 'src/app/components/cards/content-card/content-card.module';
 import { HeaderCustomModule } from './../../../../components/header/header/header.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,8 @@ import { GamePage } from './game.page';
     FormsModule,
     IonicModule,
     GamePageRoutingModule,
-    HeaderCustomModule
+    HeaderCustomModule,
+    ContentCardModule
   ],
   declarations: [GamePage]
 })

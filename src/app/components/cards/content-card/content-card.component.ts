@@ -1,3 +1,4 @@
+import { CrudService } from 'src/app/services/crud/crud.service';
 import { NavigationService } from './../../../services/navigation/navigation.service';
 import { Component, Input } from '@angular/core';
 

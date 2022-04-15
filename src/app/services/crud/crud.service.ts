@@ -1,11 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Game } from 'src/app/interfaces/game/game';
+import { Movie } from 'src/app/interfaces/movie/movie';
+import { News } from 'src/app/interfaces/news/news';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
+
+  moviesData = new Array<Movie>();
+  newsData = new Array<News>();
+  gamesData = new Array<Game>();
 
   constructor(
     private http: HttpClient

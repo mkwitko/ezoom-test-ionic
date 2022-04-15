@@ -2,4 +2,21 @@
 
 <ion-content>
 
+  <ion-card *ngIf="loaded">
+    <img [src]="loaded.image" alt="">
+    <ion-card-header>
+      <ion-card-subtitle>{{loaded.subtitle}}</ion-card-subtitle>
+      <ion-card-title>{{loaded.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{loaded.description}}
+    </ion-card-content>
+
+    <ion-button (click)="goTo()" expand="block">
+      Ler mais
+    </ion-button>
+  </ion-card>
+
+
+
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CrudService } from 'src/app/services/crud/crud.service';
 
 @Component({
   selector: 'app-game',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public crud: CrudService) { }
 
   ngOnInit() {
   }

@@ -1,7 +1,7 @@
 <app-header title="Filmes"></app-header>
 
 <ion-content>
-  <ng-container *ngFor="let item of movieFakeContent.movieFakeContent">
+  <ng-container *ngFor="let item of crud.moviesData">
     <app-content-card [content]="item" url="movie"></app-content-card>
   </ng-container>
 </ion-content>

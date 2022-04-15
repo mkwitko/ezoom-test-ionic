@@ -1,5 +1,7 @@
 <app-header title="Notícias"></app-header>
 
 <ion-content>
-
+  <ng-container *ngFor="let item of crud.newsData">
+    <app-content-card [content]="item" url="news"></app-content-card>
+  </ng-container>
 </ion-content>

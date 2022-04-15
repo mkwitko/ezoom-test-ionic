@@ -1,5 +1,6 @@
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-adding-content-cards',
@@ -11,12 +12,18 @@ export class AddingContentCardsComponent{
   @Input() content;
 
   constructor(
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private auth: AuthService
   ) { }
 
   goTo(url: string)
   {
-    this.navigationService.changePage(url + '-crud');
+    let router = '-home';
+    if(this.auth.user.role === 'admin')
+    {
+      router = '-crud';
+    }
+    this.navigationService.changePage(url + router);
   }
 
 }
