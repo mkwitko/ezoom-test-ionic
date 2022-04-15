@@ -15,9 +15,9 @@ import {
   sendPasswordResetEmail } from 'firebase/auth';
 import { environment } from 'src/environments/environment';
 
-import { ScreenService } from './../screen-effects/screen.service';
-import { AllowToPassService } from './../allow-to-pass/allow-to-pass.service';
+import { AllowToPassService } from '../allow-to-pass/allow-to-pass.service';
 import { from } from 'rxjs';
+import { ScreenService } from '../screen-effects/screen.service';
 import { CrudService } from '../crud/crud.service';
 
 @Injectable({

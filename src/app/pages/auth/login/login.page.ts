@@ -1,7 +1,7 @@
 import { AuthService } from './../../../services/auth/auth.service';
-import { NavigationService } from './../../../services/navigation/navigation.service';
-import { UserInterface } from './../../../interfaces/auth/user-interface';
 import { Component, OnInit } from '@angular/core';
+import { UserInterface } from 'src/app/interfaces/auth/user-interface';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-login',
