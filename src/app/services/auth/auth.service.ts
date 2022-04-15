@@ -1,3 +1,4 @@
+import { MenuService } from './../menu/menu.service';
 import { FirebaseErrorTranslationService } from './../translate/firebase-error-translation.service';
 import { UserInterface } from './../../interfaces/auth/user-interface';
 import { NavigationService } from './../navigation/navigation.service';
@@ -16,7 +17,6 @@ import {
 import { environment } from 'src/environments/environment';
 
 import { ScreenService } from './../screen-effects/screen.service';
-import { MenuControlService } from './../screen-effects/menu-control.service';
 import { AllowToPassService } from './../allow-to-pass/allow-to-pass.service';
 import { from } from 'rxjs';
 import { CrudService } from '../crud/crud.service';
@@ -32,11 +32,12 @@ export class AuthService {
 
   constructor(
     private allow: AllowToPassService,
-    private menuCtrl: MenuControlService,
+    private menuCtrl: MenuService,
     private screenService: ScreenService,
     private navigationService: NavigationService,
     private firebaseError: FirebaseErrorTranslationService,
-    private crud: CrudService
+    private crud: CrudService,
+    private screen: ScreenService
   )
   {
     const firebaseApp = initializeApp(environment.firebase);
@@ -66,7 +67,7 @@ export class AuthService {
     {
       signInWithEmailAndPassword(this.auth, user.userEmail.trim(), user.userPassword.trim())
       .then(() =>{
-        this.menuCtrl.callMenuCtrl(true);
+        this.menuCtrl.menuCtrl(true);
         this.screenService.presentToast('Bem Vindo!', 'sucess');
       })
       .catch((error) => {
@@ -82,7 +83,7 @@ export class AuthService {
   async loginAnonAsUser(){
     signInAnonymously(this.auth)
     .then(() =>{
-      this.menuCtrl.callMenuCtrl(true);
+      this.menuCtrl.menuCtrl(true);
       this.screenService.presentToast('Bem Vindo!', 'sucess');
     })
     .catch((error) => {
@@ -95,7 +96,7 @@ export class AuthService {
   async loginAnonAsAdmin(){
     signInAnonymously(this.auth)
     .then(() =>{
-      this.menuCtrl.callMenuCtrl(true);
+      this.menuCtrl.menuCtrl(true);
       this.screenService.presentToast('Bem Vindo!', 'sucess');
     })
     .catch((error) => {
@@ -106,7 +107,7 @@ export class AuthService {
   }
 
   async logout(){
-    this.menuCtrl.callMenuCtrl(false);
+    this.menuCtrl.menuCtrl(false);
     this.auth.signOut()
     .then(() => {
       this.screenService.presentToast('Até breve!', 'warning');
@@ -131,6 +132,8 @@ export class AuthService {
             user.userPassword = null;
             this.crud.create(environment.controllers[0], user).then(() => {
               this.screenService.presentToast('Conta criada com sucesso!', 'sucess');
+              this.loadAll();
+              this.menuCtrl.menuCtrl(true);
             }).catch(() => {
               this.screenService.presentToast('Ocorreu um erro na criação da conta');
               this.delete();
@@ -170,6 +173,52 @@ export class AuthService {
 
   async getUser(){
     return await this.auth.currentUser;
+  }
+
+  loadAll()
+  {
+    this.getAuth().onAuthStateChanged(user => {
+      this.menuCtrl.menuBool = !user;
+      if(user)
+      {
+        this.crud.readAll(environment.controllers[0]).then((res ) =>
+        {
+          for(const a of res)
+          {
+            if(user.email === a.userEmail)
+            {
+              this.user = a;
+              this.id = a.id;
+            }
+          }
+        });
+
+        //Movies
+        this.crud.readAll(environment.controllers[1]).then((res => {
+          this.crud.moviesData = res;
+        })).catch(() => {
+          this.screen.presentToast('Não foi possível recuperar os dados dos Filmes');
+        });
+
+        //News
+        this.crud.readAll(environment.controllers[2]).then((res => {
+          this.crud.newsData = res;
+        })).catch(() => {
+          this.screen.presentToast('Não foi possível recuperar os dados das Notícias');
+        });
+
+        //Games
+        this.crud.readAll(environment.controllers[3]).then((res => {
+          this.crud.gamesData = res;
+        })).catch(() => {
+          this.screen.presentToast('Não foi possível recuperar os dados dos Jogos');
+        });
+      }
+      else {
+        this.user = null;
+        this.id = null;
+      }
+    });
   }
 
 
