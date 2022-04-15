@@ -1,6 +1,6 @@
 # EZOOM PROJETO TESTE - IONIC
 
-## Sistema?
+## Sistema
 
 Instale a [apk - android]() no seu celular ou faça download deste repositório.
 A seguir, instale [este](https://github.com/mkwitko/ezoom-test-CodeIgniterAPI) repositório para ter acesso à APi do banco de dados.
@@ -12,7 +12,7 @@ Src/Environments/environment.ts/baseUrl
 
 O mesmo serve para as rotas das controllers, caso sejam alteradas se faz necessário alterar no app. As rotas de controllers podem ser encontradas no mesmo arquivo descrito acima.
 
-## Autenticação?
+## Autenticação
 
 O app conta com um sistema de autenticação, onde é possível entrar com uma conta criada, cadastrar uma nova e utilizar um sistema de esqueci minha senha.
 Os usuários cadastrados podem ser classificados como 'user' ou 'admin', sendo este sistema feito de forma artificial no cadastro (Em um ambiente de produção este sistema seria diferente. Foi feito dessa forma apenas para fins deste teste).
@@ -47,7 +47,7 @@ Ao clicar em qualquer card, o administrador é redirecionado para uma nova pági
 
 Para poder enviar um elemento se faz necessário preencher todos os campos do formulário.
 
-*Verificações especiais
+Verificações especiais
 
 - Filme -> Se faz necessário preencher o campo 'Link' com um link Embed do Youtube, [por exemplo](https://support.google.com/youtube/answer/171780?hl=pt-BR).
 *Atenção: Importante salientar: O campo solicitada que seja adicionado somente o link embed, não todo o código html que o youtube fornece.
@@ -58,8 +58,9 @@ Para poder enviar um elemento se faz necessário preencher todos os campos do fo
 - Imagem -> Recomenda-se prover links para imagens .jpg
 
 
-
-
+Além deste acesso via Página Inicial, pode-se acessar a lista completa de elementos enviados através do menu lateral. 
+Ao acessar o mesmo, o administrador é apresentado à todos elementos da categoria selecionada, podendo acessar o elemento afim de atualizar ou deletar o mesmo.
+Além disso, o administrador pode acessar a criação de um novo elemento através de um Fab Button localizado no canto inferior direito da página.
 
 
 
