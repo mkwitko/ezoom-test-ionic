@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
@@ -32,7 +33,8 @@ export class GameCrudPage {
     private auth: AuthService,
     private navigationService: NavigationService,
     private activeRoute: ActivatedRoute,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private http: HttpClient
   )
   {
     // Essa rota pode ser acessada para a criação ou para a atualização de um elemento
@@ -106,6 +108,8 @@ export class GameCrudPage {
   {
     this.crud.create(this.controller, this.sendObject).then(() => {
       this.screen.presentToast('Jogo adicionado com sucesso!', 'sucess');
+      //Atualização instantanea
+      this.auth.loadAll();
     }).catch(() => { // Caso exista um erro na requisição
       this.screen.presentToast('Ocorreu um erro. Tente novamente mais tarde ou contate a administração do App.');
     }).finally(() => {  // Chamada ao final das requisições, sejam elas bem ou mal sucedidas
@@ -118,6 +122,8 @@ export class GameCrudPage {
   {
     this.crud.update(this.controller, this.routeId, this.sendObject).then(() => {
       this.screen.presentToast('Jogo Atualizado com sucesso!', 'sucess');
+      //Atualização instantanea
+      this.auth.loadAll();
     }).catch(() => { // Caso exista um erro na requisição
       this.screen.presentToast('Ocorreu um erro. Tente novamente mais tarde ou contate a administração do App.');
     }).finally(() => { // Chamada ao final das requisições, sejam elas bem ou mal sucedidas
@@ -146,6 +152,8 @@ export class GameCrudPage {
           handler: () => {
             // Chamamento da função de delete, via Api
             this.crud.delete(this.controller, this.routeId);
+            //Atualização instantanea
+            this.auth.loadAll();
             this.navigationService.goHome();
           }
         }
@@ -157,3 +165,4 @@ export class GameCrudPage {
 
 
 }
+

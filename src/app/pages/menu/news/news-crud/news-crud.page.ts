@@ -105,6 +105,8 @@ export class NewsCrudPage{
   {
     this.crud.create(this.controller, this.sendObject).then(() => {
       this.screen.presentToast('Notícia adicionada com sucesso!', 'sucess');
+      //Atualização instantanea
+      this.auth.loadAll();
     }).catch(() => {  // Caso exista um erro na requisição
       this.screen.presentToast('Ocorreu um erro. Tente novamente mais tarde ou contate a administração do App.');
     }).finally(() => { // Chamada ao final das requisições, sejam elas bem ou mal sucedidas
@@ -117,6 +119,8 @@ export class NewsCrudPage{
   {
     this.crud.update(this.controller, this.routeId, this.sendObject).then(() => {
       this.screen.presentToast('Notícia Atualizada com sucesso!', 'sucess');
+      //Atualização instantanea
+      this.auth.loadAll();
     }).catch(() => { // Caso exista um erro na requisição
       this.screen.presentToast('Ocorreu um erro. Tente novamente mais tarde ou contate a administração do App.');
     }).finally(() => { // Chamada ao final das requisições, sejam elas bem ou mal sucedidas
@@ -145,6 +149,8 @@ export class NewsCrudPage{
           handler: () => {
             // Chamamento da função de delete, via Api
             this.crud.delete(this.controller, this.routeId);
+            //Atualização instantanea
+            this.auth.loadAll();
             this.navigationService.goHome();
           }
         }
