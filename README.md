@@ -48,17 +48,16 @@ Para poder enviar um elemento se faz necessário preencher todos os campos do fo
 
 Verificações especiais
 
+- Imagem -> Recomenda-se prover links para imagens .jpg
 - Filme -> Se faz necessário preencher o campo 'Link' com um link Embed do Youtube, [por exemplo](https://support.google.com/youtube/answer/171780?hl=pt-BR).
 
-*Atenção: Importante salientar: O campo solicita que seja adicionado somente o link embed, não todo o código html que o youtube fornece.
+Atenção: Importante salientar: O campo solicita que seja adicionado somente o link embed, não todo o código html que o youtube fornece.
 
-  *Exemplo: 
+Exemplo: 
+
   Link original - https://www.youtube.com/watch?v=188E-bt4Wy4
   
   Link a ser adicionado - https://www.youtube.com/embed/188E-bt4Wy4
-  
-- Imagem -> Recomenda-se prover links para imagens .jpg
-
 
 Além deste acesso via Página Inicial, pode-se acessar a lista completa de elementos enviados através do menu lateral. 
 Ao acessar o mesmo, o administrador é apresentado à todos elementos da categoria selecionada, podendo acessar o elemento afim de atualizar ou deletar o mesmo.
