@@ -19,11 +19,9 @@ Os usuários cadastrados podem ser classificados como 'user' ou 'admin', sendo e
 
 Para fins de teste, criei duas contas para facilitar o processo, sendo elas:
 
-Usuário - 
-user: user@user.com.br
+Usuário - user@user.com.br
 
-Administrador - 
-user: admin@admin.com.br
+Administrador - admin@admin.com.br
 
 Para ambas as contas a senha é 'ezoomtest'.
 
