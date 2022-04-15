@@ -8,5 +8,9 @@ export const environment = {
     messagingSenderId: '901938073399',
     appId: '1:901938073399:web:b69b695dadbbf3f3f014b2',
     measurementId: 'G-S6VQ0D5NBH'
-  }
+  },
+  baseUrl: 'http://localhost:8080/',
+  controllers: [
+    'users', 'movies', 'newss', 'games'
+  ]
 };

@@ -10,7 +10,6 @@ import {
   initializeAuth,
   Auth,
   getAuth,
-  signInAnonymously,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   sendPasswordResetEmail } from 'firebase/auth';
@@ -40,6 +39,7 @@ export class AuthService {
     private screen: ScreenService
   )
   {
+    // Inicialização do Firebase
     const firebaseApp = initializeApp(environment.firebase);
     if (Capacitor.isNativePlatform()) {
       initializeAuth(firebaseApp, {
@@ -49,18 +49,17 @@ export class AuthService {
     this.auth = getAuth(firebaseApp);
   }
 
+  // Retorna informações de autenticação
   getAuth(){
     return this.auth;
   }
 
+  // Deletar usuário atual
   delete(){
     return from(this.auth.currentUser.delete());
   }
 
-  async getId(){
-    return await this.auth.currentUser.uid;
-  }
-
+  // Função de login no sistema
   async login(user: UserInterface){
     if(this.allow.guardian([
       user.userEmail, user.userPassword]))
@@ -80,32 +79,7 @@ export class AuthService {
     }
   }
 
-  async loginAnonAsUser(){
-    signInAnonymously(this.auth)
-    .then(() =>{
-      this.menuCtrl.menuCtrl(true);
-      this.screenService.presentToast('Bem Vindo!', 'sucess');
-    })
-    .catch((error) => {
-      this.screenService.presentToast(
-        this.firebaseError.verifyErrors(error.code)
-      );
-    });;
-  }
-
-  async loginAnonAsAdmin(){
-    signInAnonymously(this.auth)
-    .then(() =>{
-      this.menuCtrl.menuCtrl(true);
-      this.screenService.presentToast('Bem Vindo!', 'sucess');
-    })
-    .catch((error) => {
-      this.screenService.presentToast(
-        this.firebaseError.verifyErrors(error.code)
-      );
-    });;
-  }
-
+  // Função de logout no sistema
   async logout(){
     this.menuCtrl.menuCtrl(false);
     this.auth.signOut()
@@ -119,6 +93,7 @@ export class AuthService {
     });
   }
 
+  // Função de registro no sistema
   register(user: UserInterface, confirmPassword: string){
     if(this.allow.guardian(
       [user.userEmail, user.userPassword]
@@ -151,6 +126,7 @@ export class AuthService {
     }
   }
 
+  // Envia um e-mail para o usuário afim de criar uma nova senha
   async resetPassword(email: string){
     if(this.allow.guardian(
       [email]
@@ -171,10 +147,7 @@ export class AuthService {
     }
   }
 
-  async getUser(){
-    return await this.auth.currentUser;
-  }
-
+  // Essa função carrega todas as informações do banco e atrela ao usuário
   loadAll()
   {
     this.getAuth().onAuthStateChanged(user => {

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
@@ -7,19 +6,17 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ScreenService {
 
-  public loading;
-
   constructor(
-    private loadingController: LoadingController,
     private toastr: ToastrService
   ) { }
 
-  public async presentLoading() {
-    this.loading = await this.loadingController.create({
-      message: 'Aguarde'
-    });
-    await this.loading.present();
-  }
+  //Função para chamada de Toasts
+  // Caso não seja especificado o tipo de toast o mesmo será de Erro
+
+  //Sucess = Verde
+  // Error = Vermelho
+  // Warning = Amarelo
+  // Info = Azul
 
   public async presentToast(message: string, myType?: string,  title?: string) {
 
@@ -42,6 +39,5 @@ export class ScreenService {
     }
 
   }
-
 
 }

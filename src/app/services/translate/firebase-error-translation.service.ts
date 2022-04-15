@@ -7,6 +7,7 @@ export class FirebaseErrorTranslationService {
 
   constructor() { }
 
+  // Função utilizada pra traduzir para pt-br os erros de Autenticação emitidos pelo Firebase
   verifyErrors(errorCode){
     switch (errorCode) {
       case 'auth/missing-email':

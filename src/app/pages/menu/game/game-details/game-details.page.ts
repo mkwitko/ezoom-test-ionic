@@ -11,7 +11,10 @@ import { CrudService } from 'src/app/services/crud/crud.service';
 })
 export class GameDetailsPage {
 
+  // Variavel de recebimento das informações carregadas
   public loaded: Game;
+
+  // Variavel de recebimento de ID da rota
   private routeId;
 
   constructor(
@@ -23,6 +26,8 @@ export class GameDetailsPage {
 
   ionViewWillEnter()
   {
+    // Precaução para, caso a página seja aberta sem ser vindo de um click da pagina game-crud-home
+    // Retornar para a página anterior
     if(this.crud.gamesData.length === 0)
     {
       this.navigationService.changePage('game-home');

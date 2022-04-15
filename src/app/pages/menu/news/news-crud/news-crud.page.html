@@ -1,6 +1,10 @@
 <app-header [menu]="false" title="Adicionar Notícias" url="news-crud-home"></app-header>
 
 <ion-content>
+  <!--
+    Formulário utilizado pelo admin
+    Afim de criar ou atualizar um elemento no banco de dados
+  -->
   <ion-item>
     <ion-label position="floating">Titulo</ion-label>
     <ion-input type="text" [(ngModel)]="sendObject.title" ></ion-input>
@@ -8,13 +12,13 @@
 
   <ion-item>
     <ion-label position="floating">SubTitulo</ion-label>
-    <ion-input type="text" [(ngModel)]="sendObject.subtitle" ></ion-input>
+    <ion-textarea autoGrow type="text" [(ngModel)]="sendObject.subtitle" ></ion-textarea>
   </ion-item>
 
 
   <ion-item>
     <ion-label position="floating">Conteúdo</ion-label>
-    <ion-textarea type="text" [(ngModel)]="sendObject.description" ></ion-textarea>
+    <ion-textarea autoGrow type="text" [(ngModel)]="sendObject.description" ></ion-textarea>
   </ion-item>
 
   <ion-item>

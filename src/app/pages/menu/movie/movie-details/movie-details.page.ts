@@ -1,5 +1,4 @@
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
-import { MovieFakeContentService } from './../../../../fakeContent/movie/movie-fake-content.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/interfaces/movie/movie';
@@ -13,8 +12,13 @@ import { CrudService } from 'src/app/services/crud/crud.service';
 })
 export class MovieDetailsPage{
 
+  // Variavel de recebimento das informações carregadas
   public loaded: Movie;
+
+  // Variavel de recebimento do link do vídeo do youtube após sanitizer
   public trustedLink;
+
+  // Variavel de recebimento de ID da rota
   private routeId;
 
   constructor(
@@ -27,6 +31,8 @@ export class MovieDetailsPage{
 
   ionViewWillEnter()
   {
+    // Precaução para, caso a página seja aberta sem ser vindo de um click da pagina game-crud-home
+    // Retornar para a página anterior
     if(this.crud.moviesData.length === 0)
     {
       this.navigationService.changePage('movie-home');
@@ -43,6 +49,8 @@ export class MovieDetailsPage{
       if(a.id.toString() === routeId)
       {
         this.loaded = a;
+
+        // Processo de depuração do link do youtube afim de que não seja bloqueado
         this.trustedLink = this.safeUrl.sanitize(this.loaded.link);
       }
     }

@@ -2,17 +2,20 @@
 
 <ion-content>
 
-  <ion-card *ngIf="loaded">
-    <img [src]="loaded.image" alt="">
-    <ion-card-header>
-      <ion-card-subtitle>{{loaded.subtitle}}</ion-card-subtitle>
-      <ion-card-title>{{loaded.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      {{loaded.description}}
-    </ion-card-content>
-  </ion-card>
-
-
+    <!-- Caso já tenha carregado -->
+    <ion-card *ngIf="loaded">
+      <!-- Display da imagem -->
+      <img [src]="loaded.image" alt="">
+      <ion-card-header>
+        <!-- Subtitulo -->
+        <ion-card-subtitle>{{loaded.subtitle}}</ion-card-subtitle>
+        <!-- Titulo -->
+        <ion-card-title>{{loaded.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Descrição -->
+        {{loaded.description}}
+      </ion-card-content>
+    </ion-card>
 
 </ion-content>

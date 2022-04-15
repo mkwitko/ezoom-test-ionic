@@ -20,6 +20,7 @@ export class CrudService {
     private unsub: UnsubService
   ) { }
 
+  // Essa função retornará todos os elementos do controller
   readAll(controller: string): Promise<any>
   {
     return new Promise((resolve, reject) => {
@@ -34,6 +35,7 @@ export class CrudService {
     });
   }
 
+  // Essa função retornará o elemento chamado pelo id do controller
   read(controller: string, id: string)
   {
     return new Promise((resolve, reject) => {
@@ -48,6 +50,7 @@ export class CrudService {
     });
   }
 
+  // Essa função criará um elemento novo na controller, a partir do body passado
   create(controller: string, body: any)
   {
     return new Promise((resolve, reject) => {
@@ -62,6 +65,7 @@ export class CrudService {
     });
   }
 
+  // Essa função atualizará um elemento, selecionado pela id, na controller, a partir do body passado
   update(controller: string, id: string, body: any)
   {
     return new Promise((resolve, reject) => {
@@ -76,6 +80,7 @@ export class CrudService {
     });
   }
 
+  // Essa função deletará um elemento, selecionado pela id, na controller
   delete(controller: string, id: string)
   {
     return new Promise((resolve, reject) => {

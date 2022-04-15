@@ -14,21 +14,25 @@ export class NavigationService {
     private iab: InAppBrowser
   ) { }
 
+  // Função utilizada para navegar entre páginas dentro do App
   changePage(url: string){
     this.router.navigateByUrl(url);
   }
 
+  // Função utilizada para navegar para uma página Fora do App
+  away(url: string)
+  {
+    this.iab.create(url);
+  }
+
+  // Função utilizada para navegar para a pagina anterior
   goBack(){
     this.nav.back();
   }
 
+  // Função utilizada para navegar para a Home
   goHome()
   {
     this.router.navigateByUrl('home');
-  }
-
-  away(url: string)
-  {
-    this.iab.create(url);
   }
 }

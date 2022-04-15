@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
+  // Recebe os valores de autenticação
   public userLogin: UserInterface = {};
 
 
@@ -21,21 +22,13 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  // Processo de autenticação, recebe a variavel userLogin, que é preenchida via ngModel no html
   login()
   {
     this.authService.login(this.userLogin);
   }
 
-  loginGuest()
-  {
-    this.authService.loginAnonAsUser();
-  }
-
-  loginGuestAdmin()
-  {
-    this.authService.loginAnonAsAdmin();
-  }
-
+  // Navega para uma página dentro do app
   goTo(url: string)
   {
     this.navigationService.changePage(url);

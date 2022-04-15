@@ -1,8 +1,5 @@
-import { News } from './../../../../interfaces/news/news';
 import { Component } from '@angular/core';
 import { CrudService } from 'src/app/services/crud/crud.service';
-import { ScreenService } from 'src/app/services/screen-effects/screen.service';
-import { NavigationService } from 'src/app/services/navigation/navigation.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -12,24 +9,9 @@ import { environment } from 'src/environments/environment';
 })
 export class NewsCrudHomePage{
 
-
-  public news = new Array<News>();
-
   constructor(
-    private crud: CrudService,
-    private screen: ScreenService,
-    private navigationService: NavigationService
+    public crud: CrudService
   )
   {}
-
-  ionViewWillEnter()
-  {
-    this.crud.readAll(environment.controllers[2]).then(res => {
-      this.news = res;
-    }).catch(() => {
-      this.screen.presentToast('Não foi possível carregar os dados. Tente novamente mais tarde.');
-      this.navigationService.goHome();
-    });
-  }
 
 }

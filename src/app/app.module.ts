@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 //HTTP
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 //Angular custom Toasts
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,7 +23,9 @@ import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, IonicModule.forRoot({swipeBackEnabled: false}), AppRoutingModule,
+    BrowserModule,
+    IonicModule.forRoot({swipeBackEnabled: false}),
+    AppRoutingModule,
 
     //HTTP
     HttpClientModule,

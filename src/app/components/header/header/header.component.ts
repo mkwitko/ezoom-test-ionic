@@ -8,7 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Input() title;
+
+  // Passar url completa
   @Input() url;
+
   @Input() menu = true;
   @Input() color = 'primary';
 

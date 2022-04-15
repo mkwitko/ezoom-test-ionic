@@ -1,10 +1,15 @@
+<!-- Funçao de Click/Navegação-->
 <ion-card (click)="goTo(content.id)">
+  <!-- Imagem do card-->
   <img [src]="content.image" />
   <ion-card-header>
+    <!-- Subtitulo -->
     <ion-card-subtitle>{{content.subtitle}}</ion-card-subtitle>
+    <!-- Titulo -->
     <ion-card-title>{{content.title}}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
+    <!-- Descrição-->
     {{content.description}}
   </ion-card-content>
 </ion-card>

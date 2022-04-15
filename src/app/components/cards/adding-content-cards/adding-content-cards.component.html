@@ -1,4 +1,5 @@
 <ng-container *ngIf="content">
+  <!-- Inserção de background dinâmico no card + Função de click/navegação-->
   <ion-card [style.background-image]="'url(' + content.image + ')'" (click)="goTo(content.path)">
     <div>
       <p class="ion-text-center white title">{{content.title}}</p>

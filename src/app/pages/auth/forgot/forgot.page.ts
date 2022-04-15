@@ -9,6 +9,7 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 })
 export class ForgotPage {
 
+  // Variavél utilizada para o recebimento do e-mail utilizado para recuperar a senha
   recoveryEmail = '';
 
   constructor(
@@ -16,11 +17,13 @@ export class ForgotPage {
     private authService: AuthService,
   ) { }
 
+  // Envia um e-mail para o usuário com um formulário de criação de nova senha
   send()
   {
     this.authService.resetPassword(this.recoveryEmail);
   }
 
+  // Navega para uma página dentro do app
   goTo(url: string)
   {
     this.navigationService.changePage(url);

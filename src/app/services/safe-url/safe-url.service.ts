@@ -10,7 +10,7 @@ export class SafeUrlService {
     private sanitizer: DomSanitizer
   ) { }
 
-
+  // Essa função serve para 'limpar' uma Url, deixando ela 'segura'
   sanitize(url: string)
   {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);

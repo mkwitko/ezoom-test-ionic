@@ -1,6 +1,10 @@
 <app-header title="Notícias"></app-header>
 
 <ion-content>
+  <!--
+  Recebe as informações via Api e passa como parametro para o componente
+  Content Card (app/components/cards/content-card)
+  Este Componente se encarrega de montar o HTML e de fazer a navegação para a url desejada -->
   <ng-container *ngFor="let item of crud.newsData">
     <app-content-card [content]="item" url="news"></app-content-card>
   </ng-container>

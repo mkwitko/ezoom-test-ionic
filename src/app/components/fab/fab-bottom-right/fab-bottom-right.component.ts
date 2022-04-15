@@ -1,5 +1,5 @@
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-fab-bottom-right',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FabBottomRightComponent {
 
+  // Passar o destino completo
   @Input() url;
 
   constructor(

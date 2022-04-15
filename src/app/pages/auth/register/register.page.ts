@@ -10,27 +10,37 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 })
 export class RegisterPage {
 
+  // Recebe os valores de cadastro
   public userRegistration: UserInterface = {};
-  public confirmPassword = '';
-  public admin = false;
 
+  // Utilizado para comparar se a senha digitada está correta
+  public confirmPassword = '';
+
+  // Variavel artifical para user como roleAssignment
+  public admin = false;
 
   constructor(
     private navigationService: NavigationService,
     private authService: AuthService,
   ) { }
 
+  // Processo de autenticação, recebe a variavel userRegistration, que é preenchida via ngModel no html
   register()
   {
     this.roleAssign();
     this.authService.register(this.userRegistration, this.confirmPassword);
   }
 
+  // Navega para uma página dentro do app
   goTo(url: string)
   {
     this.navigationService.changePage(url);
   }
 
+  // Essa função só serve para o próposito deste teste
+  // Ela determina se o usuário cadastrado é admin ou user
+  // Em um ambiente de produção é necessário fazer um roleAssign mais coerente
+  // Possibilidade: Criar um painel de controle para o administrador definir a Role de cada usuário
   roleAssign()
   {
     if(this.admin === false)
