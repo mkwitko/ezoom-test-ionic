@@ -18,6 +18,9 @@ import { SafePipeModule } from 'safe-pipe';
 //Inapp
 import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
+//Screen Orientation
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,12 +38,16 @@ import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
     ToastrModule.forRoot(),
 
     //SafePipe
-    SafePipeModule
+    SafePipeModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 
     //InApp
-    InAppBrowser],
+    InAppBrowser,
+
+    //ScreenOrientation
+    ScreenOrientation
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,3 +1,4 @@
+import { FabRefresherModule } from './../../../../components/fab/fab-refresher/fab-refresher.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +18,8 @@ import { ContentCardModule } from 'src/app/components/cards/content-card/content
     IonicModule,
     MoviePageRoutingModule,
     HeaderCustomModule,
-    ContentCardModule
+    ContentCardModule,
+    FabRefresherModule
   ],
   declarations: [MoviePage]
 })

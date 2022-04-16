@@ -1,3 +1,4 @@
+import { FabRefresherModule } from './../../../../components/fab/fab-refresher/fab-refresher.module';
 import { ContentCardModule } from 'src/app/components/cards/content-card/content-card.module';
 import { HeaderCustomModule } from './../../../../components/header/header/header.module';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,8 @@ import { GamePage } from './game.page';
     IonicModule,
     GamePageRoutingModule,
     HeaderCustomModule,
-    ContentCardModule
+    ContentCardModule,
+    FabRefresherModule
   ],
   declarations: [GamePage]
 })

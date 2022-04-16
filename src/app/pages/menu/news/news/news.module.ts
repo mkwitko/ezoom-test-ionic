@@ -1,3 +1,4 @@
+import { FabRefresherModule } from './../../../../components/fab/fab-refresher/fab-refresher.module';
 import { ContentCardModule } from 'src/app/components/cards/content-card/content-card.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,7 +18,8 @@ import { HeaderCustomModule } from 'src/app/components/header/header/header.modu
     IonicModule,
     NewsPageRoutingModule,
     HeaderCustomModule,
-    ContentCardModule
+    ContentCardModule,
+    FabRefresherModule
   ],
   declarations: [NewsPage]
 })

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from './services/auth/auth.service';
 import { MenuService } from './services/menu/menu.service';
 import { NavigationService } from './services/navigation/navigation.service';
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -59,10 +61,16 @@ export class AppComponent {
   constructor(
     public menuCtrl: MenuService,
     public auth: AuthService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private screenOrientation: ScreenOrientation,
+    private plt: Platform
   )
   {
     this.auth.loadAll();
+    if(this.plt.is('cordova'))
+    {
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    }
   }
 
   changePage(url: string){
