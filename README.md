@@ -22,7 +22,7 @@ Methods
 - Update/{id}{body} [POST]
 - Delete/{id} [POST]
 
-Observação: O metodo de ler todos é feito através do chamamento da controller, exemplo: 
+Observação: O metodo de ler todos é feito através da chamada da controller, exemplo: 
 https://apiezoomtest.herokuapp.com/users
 
 ## API
