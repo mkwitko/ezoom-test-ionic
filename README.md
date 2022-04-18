@@ -69,7 +69,7 @@ Verificações especiais
 - Imagem -> Recomenda-se prover links para imagens .jpg
 - Filme -> Se faz necessário preencher o campo 'Link' com um link Embed do Youtube, [por exemplo](https://support.google.com/youtube/answer/171780?hl=pt-BR).
 
-Atenção: Importante salientar: O campo solicita que seja adicionado somente o link embed, não todo o código html que o youtube fornece.
+Importante salientar: O campo solicita que seja adicionado somente o link embed, não todo o código html que o youtube fornece.
 
 Exemplo: 
 
