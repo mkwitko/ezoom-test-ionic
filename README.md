@@ -2,7 +2,7 @@
 
 ## Sistema
 
-Instale a [apk - android](https://drive.google.com/file/d/1Wfx9or4jClpKQFnKPVxfK0y4-i6YO74a/view?usp=sharing) no seu celular ou faça download deste repositório e rode com IOnic Serve.
+Instale a [apk - android](https://drive.google.com/file/d/1Wfx9or4jClpKQFnKPVxfK0y4-i6YO74a/view?usp=sharing) no seu celular ou faça download deste repositório e rode com Ionic Serve (se faz necessário instalar os pacotes NPM com o comando npm i).
 
 O app está configurado para utilizar a url https://apiezoomtest.herokuapp.com, caso esta seja alterada se faz necessário alterar no app, através do seguinte caminho
 Src/Environments/environment.ts/baseUrl
@@ -25,7 +25,7 @@ Methods
 ## API
 
 A api está rodando via Heroku, através do link https://apiezoomtest.herokuapp.com.
-Caso necessário, o repositório da API pode ser encontrado [aqui](https://github.com/mkwitko/ezoom-test-CodeIgniterAPI).
+Caso necessário, o repositório da API pode ser encontrado [aqui](https://github.com/mkwitko/ezoom-test-CodeIgniterAPI), se fazendo necessário instalar os pacotes do composer, com o comando composer install.
 
 ## Autenticação
 
