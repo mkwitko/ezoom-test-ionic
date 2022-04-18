@@ -13,7 +13,7 @@ Controllers:
 - users
 - movies
 - newss
-- game
+- games
 
 Methods
 
