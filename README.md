@@ -48,7 +48,7 @@ Caso necessário, se faz possível criar contas novas. Para utilizar - e testar 
 ## Aplicação - Usuário
 
 Ao entrar como usuário, será apresentado as três categorias ('Filmes', 'Jogos', 'Notícias') em formatos de cards. 
-Ao clicar em qualquer card, o usuário é redirecioanado para uma página onde mostra todos elementos daquele categoria, permitindo que o usuário clique nos cards e acesse mais informações sobre os mesmos.
+Ao clicar em qualquer card, o usuário é redirecioanado para uma página onde mostra todos elementos daquela categoria, permitindo que o usuário clique nos cards e acesse mais informações sobre os mesmos.
 
 - Ao entrar em um card de Filme, o usuário poderá ver um vídeo referente àquele filme.
 - Ao entrar em um card de Notícia, o usuário poderá acessar a notícia completa (link) através de um botão de 'Ler Mais!' localizado no Rodapé da página.
