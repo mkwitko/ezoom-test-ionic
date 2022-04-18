@@ -63,6 +63,13 @@ Além deste acesso via Página Inicial, pode-se acessar a lista completa de elem
 Ao acessar o mesmo, o administrador é apresentado à todos elementos da categoria selecionada, podendo acessar o elemento afim de atualizar ou deletar o mesmo.
 Além disso, o administrador pode acessar a criação de um novo elemento através de um Fab Button localizado no canto inferior direito da página.
 
+## Atualizações
+
+- Adicionado funcionalidade de Screen Lock, obrigando o APP a permanecer como Portrait
+- Adicionado Fab Button de Refresh nas páginas de Home de cada categoria (Filmes, Jogos, Notícias), na aplicação do usuário. Isso permite alterações em 'tempo real'. 
+
+Sugestão de teste: Abrir duas instâncias do APP e adicionar, atualizar ou deletar um elemento como administrador. Utilizar o botão de refresh para verificar a alteração do mesmo como usuário.
+
 
 
 
