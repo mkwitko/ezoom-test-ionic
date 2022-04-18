@@ -2,15 +2,30 @@
 
 ## Sistema
 
-Instale a [apk - android]() no seu celular ou faça download deste repositório.
-A seguir, instale [este](https://github.com/mkwitko/ezoom-test-CodeIgniterAPI) repositório para ter acesso à APi do banco de dados.
-Rode a API com o comando php spark serve.
-Caso o App seja inicializado sem a api estar rodando, o mesmo não poderá carregar as informações.
+Instale a [apk - android](https://drive.google.com/file/d/1Wfx9or4jClpKQFnKPVxfK0y4-i6YO74a/view?usp=sharing) no seu celular ou faça download deste repositório e rode com IOnic Serve.
 
-O app está configurado para utilizar a url http://localhost:8080, caso esta seja alterada se faz necessário alterar no app, através do seguinte caminho
+O app está configurado para utilizar a url https://apiezoomtest.herokuapp.com, caso esta seja alterada se faz necessário alterar no app, através do seguinte caminho
 Src/Environments/environment.ts/baseUrl
 
 O mesmo serve para as rotas das controllers, caso sejam alteradas se faz necessário alterar no app. As rotas de controllers podem ser encontradas no mesmo arquivo descrito acima.
+
+Controllers:
+- users
+- movies
+- newss
+- game
+
+Methods
+
+- Show/{id} [POST]
+- Create/{body} [POST]
+- Update/{id}{body} [POST]
+- Delete/{id} [POST]
+
+## API
+
+A api está rodando via Heroku, através do link https://apiezoomtest.herokuapp.com.
+Caso necessário, o repositório da API pode ser encontrado [aqui](https://github.com/mkwitko/ezoom-test-CodeIgniterAPI).
 
 ## Autenticação
 
@@ -25,7 +40,7 @@ Administrador - admin@admin.com.br
 
 Para ambas as contas a senha é 'ezoomtest'.
 
-Caso queiram criar uma nova conta, fiquem a vontade. Para utilizar - e testar - o sistema de 'esqueci minha senha', é necessário ter uma conta cadastrada com um e-mail que se tenha acesso, uma vez que o sistema de criação de senha nova é enviado por e-mail.
+Caso necessário, se faz possível criar contas novas. Para utilizar - e testar - o sistema de 'esqueci minha senha', é necessário ter uma conta cadastrada com um e-mail que se tenha acesso, uma vez que o sistema de criação de senha nova é enviado por e-mail.
 
 ## Aplicação - Usuário
 
