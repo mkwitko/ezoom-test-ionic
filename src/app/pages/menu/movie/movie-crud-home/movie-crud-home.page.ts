@@ -1,3 +1,4 @@
+import { AuthService } from './../../../../services/auth/auth.service';
 import { CrudService } from './../../../../services/crud/crud.service';
 import { Component } from '@angular/core';
 
@@ -9,7 +10,14 @@ import { Component } from '@angular/core';
 export class MovieCrudHomePage{
 
   constructor(
-    public crud: CrudService
+    public crud: CrudService,
+    private auth: AuthService
   )
   {}
+
+  ionViewWillEnter()
+  {
+    //Atualização
+    this.auth.loadAll();
+  }
 }

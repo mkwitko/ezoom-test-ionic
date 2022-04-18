@@ -157,8 +157,6 @@ export class MovieCrudPage{
           handler: () => {
             // Chamamento da função de delete, via Api
             this.crud.delete(this.controller, this.routeId);
-            //Atualização instantanea
-            this.auth.loadAll();
             this.navigationService.goHome();
           }
         }

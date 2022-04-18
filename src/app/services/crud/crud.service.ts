@@ -54,7 +54,7 @@ export class CrudService {
   create(controller: string, body: any)
   {
     return new Promise((resolve, reject) => {
-      const sub = this.http.post(environment.baseUrl + controller + '/create/', body)
+      const sub = this.http.post(environment.baseUrl + controller + '/create', body)
       .subscribe({
         next: (res) => {
           resolve(res);
